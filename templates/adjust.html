@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adjustment Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 30px;
+      }
+      css Copy code h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #c9c9c9;
+      }
+
+      .sub-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .result-box {
+        background-color: #e6e6e6;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .result-box p {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .result-box p:first-child {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Adjustment Results</h1>
+      <div class="sub-title">
+        Total amount during close time: ${{ initial_sum }}
+      </div>
+      <h3>Bills to put in safe drop</h3>
+      <div class="result-box">
+        <p>Number of $100 bills: {{ currency['hundreds'] }}</p>
+        <p>Number of $50 bills: {{ currency['fifties'] }}</p>
+        <p>Number of $20 bills: {{ currency['twenties'] }}</p>
+        <p>Number of $10 bills: {{ currency['tens'] }}</p>
+        <p>Number of $5 bills: {{ currency['fives'] }}</p>
+        <p>Number of $2 bills: {{ currency['twos'] }}</p>
+        <p>Number of $1 bills: {{ currency['ones'] }}</p>
+        <p>Number of Quarters: {{ currency['quarters'] }}</p>
+        <p>Number of Dimes: {{ currency['dimes'] }}</p>
+      </div>
+
+      <div class="sub-title">Safe drop amount: ${{ safe_drop_sum }}</div>
+      <div class="sub-title">
+        Amount in the counter after safe drop : ${{ remaining_counter }}
+      </div>
+    </div>
+  </body>
+</html>
